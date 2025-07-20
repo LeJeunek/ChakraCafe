@@ -11,6 +11,7 @@ const Card = ({ title, description, image }) => {
       maxW="sm"
       p={4}
       bg="white"
+      w={{ base: "50%", md: "calc((1280px - 2 * 12px) / 3)" }}
     >
       <Image src={image} alt={title} borderRadius="md" />
       <Heading size="md" mt={4}>

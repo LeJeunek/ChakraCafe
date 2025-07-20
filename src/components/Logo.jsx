@@ -5,7 +5,7 @@ const Logo = () => {
   return (
   <>
   <Box display="flex" alignItems="center" flexDirection={"row"} justifyContent="center" p={4} ml>
-  <Image src={logo} alt="Chakra Cafe Logo" boxSize="50px" />;
+  <Image src={logo} alt="Chakra Cafe Logo" boxSize="50px"/>;
   <Text fontSize="2xl" fontFamily="Poppins" color="brand.900" ml={2}>Chakra Café</Text>
   </Box>
   </>)

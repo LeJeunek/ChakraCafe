@@ -14,7 +14,6 @@ function App() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/ourstory" element={<Text>Our Story Page</Text>} />
-        <Route path="/location" element={<Text>Location Page</Text>} />
         <Route path="/orderonline" element={<Text>Order Online Page</Text>} />
       </Routes>
     </Box>
