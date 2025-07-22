@@ -1,37 +1,73 @@
 import {
-  HStack,
-  Link as ChakraLink,
   Box,
-  Flex
+  Flex,
+  IconButton,
+  HStack,
+  VStack,
+  Link as ChakraLink,
+  useDisclosure,
+  SlideFade,
 } from "@chakra-ui/react";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link as RouterLink } from "react-router-dom";
 import Logo from "./Logo";
+import NavLinkItem from "./NavlinkItem";
 
 const Navbar = () => {
+  const { isOpen, onToggle } = useDisclosure();
+  const navLinks = [
+    { label: "Menu", path: "/menu" },
+    { label: "Our Story", path: "/ourstory" },
+    { label: "Contact", path: "/contact" },
+    { label: "Order Online", path: "/orderonline" },
+  ];
+
   return (
-    <Box bg="brand.light" px={6} py={4} shadow="sm" borderRadius="md" mb={4}  w="100%">
-      <Flex align="center" justify="space-between" gap={4} maxW="1400px" mx="auto">
+    <Box bg="background.light" w="100%" px={4} py={4} shadow="sm">
+      <Flex
+        align="center"
+        justify="space-between"
+        maxW="1400px"
+        mx="auto"
+        flexWrap="wrap"
+      >
         {/* Wrap logo in RouterLink here only */}
         <RouterLink to="/">
           <Logo />
         </RouterLink>
-
-        <HStack spacing={8} d="flex" justify="center" >
-          <ChakraLink as={RouterLink} to="/menu" m={4} color="brand.900" textDecoration='none' bg="brand.light" borderRadius="md" p={2} _hover={{ textDecoration: 'none', bg: 'brand.200',  }}>
-            Menu
-          </ChakraLink>
-          <ChakraLink as={RouterLink} to="/ourstory" color="brand.900" textDecoration='none' bg="brand.light" p={2} borderRadius="md" _hover={{ textDecoration: 'none', bg: 'brand.200' }}>
-            Our Story
-          </ChakraLink>
-          
-          <ChakraLink as={RouterLink} to="/contact" color="brand.900" textDecoration='none' bg="brand.light" p={2} borderRadius="md" _hover={{ textDecoration: 'none', bg: 'brand.200' }}>
-            Contact
-          </ChakraLink>
-          <ChakraLink as={RouterLink} to="/orderonline" color="brand.900" textDecoration='none' bg="brand.light" p={2} borderRadius="md" align="center" _hover={{ textDecoration: 'none', bg: 'brand.300' }}>
-            Order Online
-          </ChakraLink>
+        <IconButton
+          aria-label="Toggle Navigation"
+          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+          display={{ base: "flex", md: "none" }}
+          onClick={onToggle}
+        />
+        <HStack spacing={6} display={{ base: "none", md: "flex" }}>
+          {navLinks.map(({ label, path }) => (
+            <NavLinkItem key={path} to={path} label={label} />
+          ))}
         </HStack>
       </Flex>
+      <SlideFade in={isOpen} offsetY="-10px">
+        {isOpen && (
+          <VStack
+            spacing={4}
+            mt={4}
+            px={4}
+            align="start"
+            bg="background.light"
+            w="100%"
+          >
+            {navLinks.map(({ label, path }) => (
+              <NavLinkItem
+                key={path}
+                to={path}
+                label={label}
+                onClick={onToggle}
+              />
+            ))}
+          </VStack>
+        )}
+      </SlideFade>
     </Box>
   );
 };

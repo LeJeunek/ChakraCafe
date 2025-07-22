@@ -1,5 +1,5 @@
-import hero from '../assets/hero.png';
-import { Box, Heading, Text, Image, VStack } from '@chakra-ui/react';
+import stain from "../assets/stain.png";
+import { Box, Image, VStack } from "@chakra-ui/react";
 
 const Hero = () => {
   return (
@@ -9,29 +9,39 @@ const Hero = () => {
       alignItems="center"
       py={{ base: 6, md: 12 }}
       bg="background.light"
-      width="100vw"
+      width="100%"
+      px={{ base: 4, md: 8 }}
     >
-      <VStack spacing={4} w="100vw" textAlign="center">
-        <Image
-          src={hero}
-          alt="Hero"
-          width="1240px" // fills the VStack's 50vw width
-          height="480px"
-          minHeight="480px"
-          objectFit="cover"
-          maxWidth="1400px"
-          borderRadius="lg"
-        />
-        <Heading size="lg" color="brand.900">
-          Welcome to Chakra Café
-        </Heading>
-        <Text fontSize="md" color="gray.600">
-          Your daily dose of coffee and community
-        </Text>
-      </VStack>
+     <Box
+  position="relative"
+  width="100%"
+  maxW="1000px"
+  textAlign="center"
+  borderRadius="lg"
+  overflow="hidden"
+  aspectRatio={{ base: "4/3", md: "16/9" }}
+>
+  <Image
+    src={stain}
+    alt="Hero"
+    width="100%"
+    height="100%"
+    objectFit="contain"
+  />
+        <VStack
+          position="absolute"
+          top="50%"
+          left="50%"
+          transform="translate(-50%, -50%)"
+          spacing={4}
+          px={4}
+          color="white"
+        >
+          {/* Optional Overlay Content */}
+        </VStack>
+      </Box>
     </Box>
   );
 };
 
 export default Hero;
-/* Depth 6, Frame 0 */
