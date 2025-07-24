@@ -23,7 +23,7 @@ const Navbar = () => {
   ];
 
   return (
-    <Box bg="background.light" w="100%" px={4} py={4} shadow="sm">
+    <Box bg="background.dark" w="100%" px={4} py={4} shadow="sm">
       <Flex
         align="center"
         justify="space-between"

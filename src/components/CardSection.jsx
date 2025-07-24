@@ -12,6 +12,7 @@ const CardSection = () => {
           title="Latte"
           description="Creamy latte with a hint of vanilla."
           image={latte}
+          colorScheme="#c73131"
         />
       </WrapItem>
       <WrapItem flexBasis={{ base: "47%", md: "300px" }}>
@@ -19,6 +20,7 @@ const CardSection = () => {
           title="Veggie Sandwich"
           description="Vegan sandwich with fresh veggies."
           image={sandwich}
+          colorScheme="#c73131" // <--- Add this
         />
       </WrapItem>
       <WrapItem flexBasis={{ base: "47%", md: "300px" }}>
@@ -26,6 +28,7 @@ const CardSection = () => {
           title="Tart"
           description="Delicious fruit tart with a buttery crust."
           image={tart}
+          colorScheme="#c73131" // <--- Add this
         />
       </WrapItem>
     </Wrap>

@@ -5,6 +5,7 @@ import { VStack } from "@chakra-ui/react";
 import CardSection from "../components/CardSection";
 import OurStorySection from "../components/OurStorySection";
 import LocationContactSection from "../components/LocationContactSection";
+import Footer from "../components/Footer";
 const Home = () => {
   return (
     <>
@@ -12,6 +13,7 @@ const Home = () => {
       <CardSection />
       <OurStorySection />
       <LocationContactSection />
+      <Footer />
     </>
   );
 };

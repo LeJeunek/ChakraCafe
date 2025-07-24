@@ -1,24 +1,24 @@
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme, theme as baseTheme } from '@chakra-ui/react';
 
-// Define custom theme
 const theme = extendTheme({
   colors: {
     brand: {
-      100: '#F5E0D3', // Light latte
-      200: '#F0C4A3', // Light caramel
-      300: '#E8B08C', // Light coffee
-      600: '#CC6600', // CTA button
-      700: '#D9A066', // Caramel accent
-      800: '#6F4E37', // Coffee brown
-      900: '#2E1F17', // Espresso text
+      100: '#F5E0D3',
+      200: '#F0C4A3',
+      300: '#E8B08C',
+      600: '#CC6600',
+      700: '#D9A066',
+      800: '#6F4E37',
+      900: '#2E1F17',
     },
     background: {
-      light: '#FAF4EF', // Latte background
+      light: '#f0e2d7ff',
+      dark: '#c08a6dff',
     },
   },
   fonts: {
-    heading: `'Inter', sans-serif`,
-    body: `'Inter', sans-serif`,
+    heading: `'Plus Jakarta Sans', sans-serif`,
+    body: `'Plus Jakarta Sans', sans-serif`,
   },
   components: {
     Button: {
@@ -27,13 +27,13 @@ const theme = extendTheme({
         borderRadius: 'md',
       },
       variants: {
-        solid: (props) => ({
+        solid: {
           bg: 'brand.600',
           color: 'white',
           _hover: {
             bg: 'brand.700',
           },
-        }),
+        },
       },
     },
   },

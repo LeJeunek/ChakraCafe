@@ -3,10 +3,10 @@ import { Box, Heading, Text, Link, Stack } from "@chakra-ui/react";
 const LocationContactSection = () => {
   return (
     <Box as="section" px={6} py={10} maxW="container.md" mx="auto">
-      <Heading as="h2" size="xl" mb={4}>
+      <Heading as="h2" size="m" mb={4} color="black">
         Location & Contact
       </Heading>
-      <Stack spacing={2} fontSize="lg" color="gray.700">
+      <Stack spacing={2} fontSize="sm" color="black" lineHeight="tall">
         <Text>Visit us at 123 Main Street, Anytown, USA.</Text>
         <Text>Open daily from 7 AM to 7 PM.</Text>
         <Text>

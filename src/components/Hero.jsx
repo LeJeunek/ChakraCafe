@@ -1,4 +1,4 @@
-import stain from "../assets/stain.png";
+import hero from "../assets/hero.svg";
 import { Box, Image, VStack } from "@chakra-ui/react";
 
 const Hero = () => {
@@ -22,11 +22,12 @@ const Hero = () => {
   aspectRatio={{ base: "4/3", md: "16/9" }}
 >
   <Image
-    src={stain}
+    src={hero}
     alt="Hero"
-    width="100%"
+    width="1850px"
     height="100%"
-    objectFit="contain"
+    objectFit="stretch"
+    borderRadius="12xl"
   />
         <VStack
           position="absolute"
